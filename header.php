@@ -24,6 +24,9 @@
 
     <?php if ( is_singular() && get_option( 'thread_comments' ) )               wp_enqueue_script( 'comment-reply' ); ?>
 
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    
+
 
     <?php wp_head( ); ?>
 </head>

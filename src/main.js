@@ -1,34 +1,34 @@
-$(document).ready(function() {
+jQuery(document).ready(function() {
     "use strict";
 
-    var window_width = $(window).width(),
+    var window_width = jQuery(window).width(),
         window_height = window.innerHeight,
-        header_height = $(".default-header").height(),
-        header_height_static = $(".site-header.static").outerHeight(),
+        header_height = jQuery(".default-header").height(),
+        header_height_static = jQuery(".site-header.static").outerHeight(),
         fitscreen = window_height - header_height;
 
-    $(".fullscreen").css("height", window_height)
-    $(".fitscreen").css("height", fitscreen);
+    jQuery(".fullscreen").css("height", window_height)
+    jQuery(".fitscreen").css("height", fitscreen);
 
     //------- Niceselect  js --------//  
 
     if (document.getElementById("default-select")) {
-        $('select').niceSelect();
+        jQuery('select').niceSelect();
     };
     if (document.getElementById("default-select2")) {
-        $('select').niceSelect();
+        jQuery('select').niceSelect();
     };
 
     //------- Lightbox  js --------//  
 
-    $('.img-gal').magnificPopup({
+    jQuery('.img-gal').magnificPopup({
         type: 'image',
         gallery: {
             enabled: true
         }
     });
 
-    $('.play-btn').magnificPopup({
+    jQuery('.play-btn').magnificPopup({
         type: 'iframe',
         mainClass: 'mfp-fade',
         removalDelay: 160,
@@ -38,15 +38,15 @@ $(document).ready(function() {
 
     //------- Datepicker  js --------//  
 
-      $( function() {
-        $( "#datepicker" ).datepicker();
-        $( "#datepicker2" ).datepicker();
+      jQuery( function() {
+        jQuery( "#datepicker" ).datepicker();
+        jQuery( "#datepicker2" ).datepicker();
       } );
 
 
     //------- Superfist nav menu  js --------//  
 
-    $('.nav-menu').superfish({
+    jQuery('.nav-menu').superfish({
         animation: {
             opacity: 'show'
         },
@@ -56,7 +56,7 @@ $(document).ready(function() {
 
     //------- Accordion  js --------//  
 
-    jQuery(document).ready(function($) {
+    jQuery(document).ready(function(jQuery) {
 
         if (document.getElementById("accordion")) {
 
@@ -69,7 +69,7 @@ $(document).ready(function() {
 
     //------- Owl Carusel  js --------//  
 
-    $('.active-gallery-carusel').owlCarousel({
+    jQuery('.active-gallery-carusel').owlCarousel({
         items:1,
         loop:true,
         nav:true,
@@ -78,7 +78,7 @@ $(document).ready(function() {
         smartSpeed:650,           
     });
 
-    $('.active-testimonial').owlCarousel({
+    jQuery('.active-testimonial').owlCarousel({
         items: 2,
         loop: true,
         margin: 30,
@@ -100,7 +100,7 @@ $(document).ready(function() {
         }
     });
 
-    $('.active-brand-carusel').owlCarousel({
+    jQuery('.active-brand-carusel').owlCarousel({
         items: 4,
         loop: true,
         margin: 30,
@@ -122,21 +122,21 @@ $(document).ready(function() {
 
     //------- Search Form  js --------//  
 
-    $(document).ready(function(){
-      $('#search').on("click",(function(e){
-      $(".form-group").addClass("sb-search-open");
+    jQuery(document).ready(function(){
+      jQuery('#search').on("click",(function(e){
+      jQuery(".form-group").addClass("sb-search-open");
         e.stopPropagation()
       }));
-       $(document).on("click", function(e) {
-        if ($(e.target).is("#search") === false && $(".form-control").val().length == 0) {
-          $(".form-group").removeClass("sb-search-open");
+       jQuery(document).on("click", function(e) {
+        if (jQuery(e.target).is("#search") === false && jQuery(".form-control").val().length == 0) {
+          jQuery(".form-group").removeClass("sb-search-open");
         }
       });
-        $(".form-control-submit").click(function(e){
-          $(".form-control").each(function(){
-            if($(".form-control").val().length == 0){
+        jQuery(".form-control-submit").click(function(e){
+          jQuery(".form-control").each(function(){
+            if(jQuery(".form-control").val().length == 0){
               e.preventDefault();
-              $(this).css('border', '2px solid red');
+              jQuery(this).css('border', '2px solid red');
             }
         })
       })
@@ -144,43 +144,43 @@ $(document).ready(function() {
 
     //------- Mobile Nav  js --------//  
 
-    if ($('#nav-menu-container').length) {
-        var $mobile_nav = $('#nav-menu-container').clone().prop({
+    if (jQuery('#nav-menu-container').length) {
+        var $mobile_nav = jQuery('#nav-menu-container').clone().prop({
             id: 'mobile-nav'
         });
         $mobile_nav.find('> ul').attr({
             'class': '',
             'id': ''
         });
-        $('body .main-menu').append($mobile_nav);
-        $('body .main-menu').prepend('<button type="button" id="mobile-nav-toggle"><i class="lnr lnr-menu"></i><span class="menu-title">Menu</span> </button>');
-        $('body .main-menu').append('<div id="mobile-body-overly"></div>');
-        $('#mobile-nav').find('.menu-has-children').prepend('<i class="lnr lnr-chevron-down"></i>');
+        jQuery('body .main-menu').append($mobile_nav);
+        jQuery('body .main-menu').prepend('<button type="button" id="mobile-nav-toggle"><i class="lnr lnr-menu"></i><span class="menu-title">Menu</span> </button>');
+        jQuery('body .main-menu').append('<div id="mobile-body-overly"></div>');
+        jQuery('#mobile-nav').find('.menu-has-children').prepend('<i class="lnr lnr-chevron-down"></i>');
 
-        $(document).on('click', '.menu-has-children i', function(e) {
-            $(this).next().toggleClass('menu-item-active');
-            $(this).nextAll('ul').eq(0).slideToggle();
-            $(this).toggleClass("lnr-chevron-up lnr-chevron-down");
+        jQuery(document).on('click', '.menu-has-children i', function(e) {
+            jQuery(this).next().toggleClass('menu-item-active');
+            jQuery(this).nextAll('ul').eq(0).slideToggle();
+            jQuery(this).toggleClass("lnr-chevron-up lnr-chevron-down");
         });
 
-        $(document).on('click', '#mobile-nav-toggle', function(e) {
-            $('body').toggleClass('mobile-nav-active');
-            $('#mobile-nav-toggle i').toggleClass('lnr-cross lnr-menu');
-            $('#mobile-body-overly').toggle();
+        jQuery(document).on('click', '#mobile-nav-toggle', function(e) {
+            jQuery('body').toggleClass('mobile-nav-active');
+            jQuery('#mobile-nav-toggle i').toggleClass('lnr-cross lnr-menu');
+            jQuery('#mobile-body-overly').toggle();
         });
 
-            $(document).on('click', function(e) {
-            var container = $("#mobile-nav, #mobile-nav-toggle");
+            jQuery(document).on('click', function(e) {
+            var container = jQuery("#mobile-nav, #mobile-nav-toggle");
             if (!container.is(e.target) && container.has(e.target).length === 0) {
-                if ($('body').hasClass('mobile-nav-active')) {
-                    $('body').removeClass('mobile-nav-active');
-                    $('#mobile-nav-toggle i').toggleClass('lnr-cross lnr-menu');
-                    $('#mobile-body-overly').fadeOut();
+                if (jQuery('body').hasClass('mobile-nav-active')) {
+                    jQuery('body').removeClass('mobile-nav-active');
+                    jQuery('#mobile-nav-toggle i').toggleClass('lnr-cross lnr-menu');
+                    jQuery('#mobile-body-overly').fadeOut();
                 }
             }
         });
-    } else if ($("#mobile-nav, #mobile-nav-toggle").length) {
-        $("#mobile-nav, #mobile-nav-toggle").hide();
+    } else if (jQuery("#mobile-nav, #mobile-nav-toggle").length) {
+        jQuery("#mobile-nav, #mobile-nav-toggle").hide();
     }
 
 
@@ -202,52 +202,52 @@ $(document).ready(function() {
 
     //------- Smooth Scroll  js --------//  
 
-    $('.nav-menu a, #mobile-nav a, .scrollto').on('click', function() {
+    jQuery('.nav-menu a, #mobile-nav a, .scrollto').on('click', function() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-            var target = $(this.hash);
+            var target = jQuery(this.hash);
             if (target.length) {
                 var top_space = 0;
 
-                if ($('#header').length) {
-                    top_space = $('#header').outerHeight();
+                if (jQuery('#header').length) {
+                    top_space = jQuery('#header').outerHeight();
 
-                    if (!$('#header').hasClass('header-fixed')) {
+                    if (!jQuery('#header').hasClass('header-fixed')) {
                         top_space = top_space;
                     }
                 }
 
-                $('html, body').animate({
+                jQuery('html, body').animate({
                     scrollTop: target.offset().top - top_space
                 }, 1500, 'easeInOutExpo');
 
-                if ($(this).parents('.nav-menu').length) {
-                    $('.nav-menu .menu-active').removeClass('menu-active');
-                    $(this).closest('li').addClass('menu-active');
+                if (jQuery(this).parents('.nav-menu').length) {
+                    jQuery('.nav-menu .menu-active').removeClass('menu-active');
+                    jQuery(this).closest('li').addClass('menu-active');
                 }
 
-                if ($('body').hasClass('mobile-nav-active')) {
-                    $('body').removeClass('mobile-nav-active');
-                    $('#mobile-nav-toggle i').toggleClass('lnr-times lnr-bars');
-                    $('#mobile-body-overly').fadeOut();
+                if (jQuery('body').hasClass('mobile-nav-active')) {
+                    jQuery('body').removeClass('mobile-nav-active');
+                    jQuery('#mobile-nav-toggle i').toggleClass('lnr-times lnr-bars');
+                    jQuery('#mobile-body-overly').fadeOut();
                 }
                 return false;
             }
         }
     });
 
-    $(document).ready(function() {
+    jQuery(document).ready(function() {
 
-        $('html, body').hide();
+        jQuery('html, body').hide();
 
         if (window.location.hash) {
 
             setTimeout(function() {
 
-                $('html, body').scrollTop(0).show();
+                jQuery('html, body').scrollTop(0).show();
 
-                $('html, body').animate({
+                jQuery('html, body').animate({
 
-                    scrollTop: $(window.location.hash).offset().top - 108
+                    scrollTop: jQuery(window.location.hash).offset().top - 108
 
                 }, 1000)
 
@@ -255,7 +255,7 @@ $(document).ready(function() {
 
         } else {
 
-            $('html, body').show();
+            jQuery('html, body').show();
 
         }
 
@@ -400,8 +400,8 @@ $(document).ready(function() {
 
     //------- Mailchimp js --------//  
 
-    $(document).ready(function() {
-        $('#mc_embed_signup').find('form').ajaxChimp();
+    jQuery(document).ready(function() {
+        jQuery('#mc_embed_signup').find('form').ajaxChimp();
     });
 
 });
@@ -434,21 +434,21 @@ $(document).ready(function() {
     }
 
     var p = document.getElementById ("player");
-    $(p).hide();
+    jQuery(p).hide();
 
     var t = document.getElementById ("thumbnail");
     //t.src = "img/video/play-btn.png";
 
     var onPlayerStateChange = function (event) {
         if (event.data == YT.PlayerState.ENDED) {
-            $('.start-video').fadeIn('normal');
+            jQuery('.start-video').fadeIn('normal');
         }
     }
 
-    $(document).on('click', '.start-video', function () {
-        $(this).hide();
-        $("#player").show();
-        $("#thumbnail_container").hide();
+    jQuery(document).on('click', '.start-video', function () {
+        jQuery(this).hide();
+        jQuery("#player").show();
+        jQuery("#thumbnail_container").hide();
         player.playVideo();
     });
 
