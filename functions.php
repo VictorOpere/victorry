@@ -150,8 +150,9 @@ add_action( 'init', 'victorry_theme_support');
     // lets register our javascript here
 
     wp_enqueue_script( 'jquery');
-    wp_enqueue_script( 'mypopper', get_template_directory_uri().'/js/popper.min.js', array('jquery'), '1.0.0', True );
+    
     wp_enqueue_script( 'myboot', get_template_directory_uri().'/js/vendor/bootstrap.min.js', array('jquery'), '1.0.0', True );
+    wp_enqueue_script( 'mypopper', get_template_directory_uri().'/js/popper.min.js', array('jquery'), '1.0.0', True );
     wp_enqueue_script( 'mymap', "https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA", array(), '1.0.0', True );
     wp_enqueue_script( 'myeasing', get_template_directory_uri().'/js/easing.min.js', array('jquery'), '1.0.0', True );
     wp_enqueue_script( 'myhover', get_template_directory_uri().'/js/hoverIntent.js', array('jquery'), '1.0.0', True );
