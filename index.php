@@ -70,56 +70,39 @@
 								<h4 class="title">Popular Posts</h4>
 								
 								<div class="row mt-20 medium-gutters">
+								<?php
+									$args = array( 'numberposts' => 8,'order'=> 'DESC', 'orderby' => 'meta_value_num', );
+									$postslist = get_posts( $args );
+									foreach ($postslist as $post) :  setup_postdata($post); ?> 
+
 									<div class="col-lg-6 single-popular-post">
 										<div class="feature-img-wrap relative">
 											<div class="feature-img relative">
 												<div class="overlay overlay-bg"></div>
-												<img class="img-fluid" src="img/f2.jpg" alt="">
+												<img class="img-fluid" src="<?php the_post_thumbnail_url();?>" alt="<?php the_title();?>">
 											</div>
 											<ul class="tags">
-												<li><a href="#">Travel</a></li>
+												<?php the_category()?>
 											</ul>
 										</div>
 										<div class="details">
-											<a href="image-post.html">
-												<h4>A Discount Toner Cartridge Is
-												Better Than Ever.</h4>
+											<a href="<?php the_permalink();?>">
+												<?php the_title( '<h4>', '</h4>');?>
 											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li>
-											</ul>
-											<p class="excert">
-												Lorem ipsum dolor sit amet, consecteturadip isicing elit, sed do eiusmod tempor incididunt ed do eius.
-											</p>
+										<ul class="meta">
+											<li><a href="#"><span class="lnr lnr-user"></span><?php the_author();?></a></li>
+											<li><a href="#"><span class="lnr lnr-calendar-full"></span><?php echo esc_html(human_time_diff( get_the_time('U'), current_time('timestamp') )) . ' ago'; ?></a></li>
+											<li><a href="#"><span class="lnr lnr-bubble"></span><?php echo esc_html(get_comments_number($post->ID));?></a></li>
+										</ul>
+										<p>
+											<?php the_excerpt();?>
+										</p>
 										</div>
 									</div>
-									<div class="col-lg-6 single-popular-post">
-										<div class="feature-img-wrap relative">
-											<div class="feature-img relative">
-												<div class="overlay overlay-bg"></div>
-												<img class="img-fluid" src="img/f3.jpg" alt="">
-											</div>
-											<ul class="tags">
-												<li><a href="#">Travel</a></li>
-											</ul>
-										</div>
-										<div class="details">
-											<a href="image-post.html">
-												<h4>A Discount Toner Cartridge Is
-												Better Than Ever.</h4>
-											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06 </a></li>
-											</ul>
-											<p class="excert">
-												Lorem ipsum dolor sit amet, consecteturadip isicing elit, sed do eiusmod tempor incididunt ed do eius.
-											</p>
-										</div>
-									</div>
+
+          					    <?php endforeach; ?>
+
+									
 								</div>
 							</div>
 							<!-- End popular-post Area -->
@@ -127,81 +110,40 @@
 							<div class="relavent-story-post-wrap mt-30">
 								<h4 class="title">Relavent Stories</h4>
 								<div class="relavent-story-list-wrap">
+
+								<?php
+									$args = array( 'numberposts' => 10, 'order'=> 'ASC', 'orderby' => 'ID' );
+									$postslist = get_posts( $args );
+									foreach ($postslist as $post) :  setup_postdata($post); ?> 
+
 									<div class="single-relavent-post row align-items-center">
 										<div class="col-lg-5 post-left">
 											<div class="feature-img relative">
 												<div class="overlay overlay-bg"></div>
-												<img class="img-fluid" src="img/r1.jpg" alt="">
+												<img class="img-fluid" src="<?php the_post_thumbnail_url();?>" alt="<?php the_title();?>">
 											</div>
 											<ul class="tags">
-												<li><a href="#">Lifestyle</a></li>
+												<?php the_category()?>
 											</ul>
 										</div>
 										<div class="col-lg-7 post-right">
-											<a href="image-post.html">
-												<h4>A Discount Toner Cartridge Is
-												Better Than Ever.</h4>
+											<a href="<?php the_permalink();?>">
+												<?php the_title( '<h4>', '</h4>');?>
 											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-											</ul>
-											<p class="excert">
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-											</p>
+										<ul class="meta">
+											<li><a href="#"><span class="lnr lnr-user"></span><?php the_author();?></a></li>
+											<li><a href="#"><span class="lnr lnr-calendar-full"></span><?php echo esc_html(human_time_diff( get_the_time('U'), current_time('timestamp') )) . ' ago'; ?></a></li>
+											<li><a href="#"><span class="lnr lnr-bubble"></span><?php echo esc_html(get_comments_number($post->ID));?></a></li>
+										</ul>
+										<p>
+											<?php the_excerpt();?>
+										</p>
+										
 										</div>
 									</div>
-									<div class="single-relavent-post row align-items-center">
-										<div class="col-lg-5 post-left">
-											<div class="feature-img relative">
-												<div class="overlay overlay-bg"></div>
-												<img class="img-fluid" src="img/r2.jpg" alt="">
-											</div>
-											<ul class="tags">
-												<li><a href="#">Science</a></li>
-											</ul>
-										</div>
-										<div class="col-lg-7 post-right">
-											<a href="image-post.html">
-												<h4>A Discount Toner Cartridge Is
-												Better Than Ever.</h4>
-											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-											</ul>
-											<p class="excert">
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-											</p>
-										</div>
-									</div>
-									<div class="single-relavent-post row align-items-center">
-										<div class="col-lg-5 post-left">
-											<div class="feature-img relative">
-												<div class="overlay overlay-bg"></div>
-												<img class="img-fluid" src="img/r3.jpg" alt="">
-											</div>
-											<ul class="tags">
-												<li><a href="#">Travel</a></li>
-											</ul>
-										</div>
-										<div class="col-lg-7 post-right">
-											<a href="image-post.html">
-												<h4>A Discount Toner Cartridge Is
-												Better Than Ever.</h4>
-											</a>
-											<ul class="meta">
-												<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-												<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-											</ul>
-											<p class="excert">
-												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-											</p>
-										</div>
-									</div>
+
+          					    <?php endforeach; ?>
+
 								</div>
 							</div>
 							<!-- End relavent-story-post Area -->
