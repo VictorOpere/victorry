@@ -172,3 +172,41 @@ add_action( 'init', 'victorry_theme_support');
  }
 
  add_action( 'wp_enqueue_scripts', 'victorry_theme_scripts');
+
+
+ /*
+	 * Placing the required files needed for our theme to work
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+     *****
+     
+     
+*/
+
+require_once(get_template_directory( ).'/inc/class-wp-bootstrap-navwalker.php');
+
+
+/*
+	 * Lets register the menus for our theme
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+     *****
+     // Include custom navwalker
+     
+     
+*/
+
+function victorry_register_menus()
+{
+    # code...
+    // lets add menus for our header and the other for footer
+    register_nav_menus( array(
+        'primary_menu' => __( 'Primary Menu', 'victorry' ),
+     
+    ) );
+}
+
+add_action( 'init', 'victorry_register_menus');
+
+
+

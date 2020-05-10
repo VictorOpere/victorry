@@ -1,140 +1,10 @@
 <?php get_header();?>
 
-
-<header>
-			<div class="header-top">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-left no-padding">
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-behance"></i></a></li>
-							</ul>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-right no-padding">
-							<ul>
-								<li><a href="tel:+440 012 3654 896"><span class="lnr lnr-phone-handset"></span><span>+440 012 3654 896</span></a></li>
-								<li><a href="mailto:support@colorlib.com"><span class="lnr lnr-envelope"></span><span>support@colorlib.com</span></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="logo-wrap">
-				<div class="container">
-					<div class="row justify-content-between align-items-center">
-						<div class="col-lg-4 col-md-4 col-sm-12 logo-left no-padding">
-							<a href="index.html">
-								<img class="img-fluid" src="img/logo.png" alt="">
-							</a>
-						</div>
-						<div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding ads-banner">
-							<img class="img-fluid" src="img/banner-ad.jpg" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="container main-menu" id="main-menu">
-				<div class="row align-items-center justify-content-between">
-					<nav id="nav-menu-container">
-						<ul class="nav-menu">
-							<li class="menu-active"><a href="index.html">Home</a></li>
-							<li><a href="archive.html">Archive</a></li>
-							<li><a href="category.html">Category</a></li>
-							<li class="menu-has-children"><a href="">Post Types</a>
-							<ul>
-								<li><a href="standard-post.html">Standard Post</a></li>
-								<li><a href="image-post.html">Image Post</a></li>
-								<li><a href="gallery-post.html">Gallery Post</a></li>
-								<li><a href="video-post.html">Video Post</a></li>
-								<li><a href="audio-post.html">Audio Post</a></li>
-							</ul>
-						</li>
-						<li><a href="about.html">About</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-					</nav><!-- #nav-menu-container -->
-					<div class="navbar-right">
-						<form class="Search">
-							<input type="text" class="form-control Search-box" name="Search-box" id="Search-box" placeholder="Search">
-							<label for="Search-box" class="Search-box-label">
-								<span class="lnr lnr-magnifier"></span>
-							</label>
-							<span class="Search-close">
-								<span class="lnr lnr-cross"></span>
-							</span>
-						</form>
-					</div>
-				</div>
-			</div>
-		</header>
-		
-		<div class="site-main-container">
+<div class="site-main-container">
 			<!-- Start top-post Area -->
 			<section class="top-post-area pt-10">
 				<div class="container no-padding">
 					<div class="row small-gutters">
-						<div class="col-lg-8 top-post-left">
-							<div class="feature-image-thumb relative">
-								<div class="overlay overlay-bg"></div>
-								<!-- <img class="img-fluid" src="img/top-post1.jpg" alt=""> -->
-							</div>
-							<div class="top-post-details">
-								<ul class="tags">
-									<li><a href="#">Food Habit</a></li>
-								</ul>
-								<a href="image-post.html">
-									<h3>A Discount Toner Cartridge Is Better Than Ever.</h3>
-								</a>
-								<ul class="meta">
-									<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-									<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-									<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-lg-4 top-post-right">
-							<div class="single-top-post">
-								<div class="feature-image-thumb relative">
-									<div class="overlay overlay-bg"></div>
-									<!-- <img class="img-fluid" src="img/top-post2.jpg" alt=""> -->
-								</div>
-								<div class="top-post-details">
-									<ul class="tags">
-										<li><a href="#">Food Habit</a></li>
-									</ul>
-									<a href="image-post.html">
-										<h4>A Discount Toner Cartridge Is Better Than Ever.</h4>
-									</a>
-									<ul class="meta">
-										<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-										<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="single-top-post mt-10">
-								<div class="feature-image-thumb relative">
-									<div class="overlay overlay-bg"></div>
-									<!-- <img class="img-fluid" src="img/top-post3.jpg" alt=""> -->
-								</div>
-								<div class="top-post-details">
-									<ul class="tags">
-										<li><a href="#">Food Habit</a></li>
-									</ul>
-									<a href="image-post.html">
-										<h4>A Discount Toner Cartridge Is Better</h4>
-									</a>
-									<ul class="meta">
-										<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-										<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-										<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
 						<div class="col-lg-12">
 							<div class="news-tracker-wrap">
 								<h6><span>Breaking News:</span>   <a href="#">Astronomy Binoculars A Great Alternative</a></h6>
@@ -144,144 +14,61 @@
 				</div>
 			</section>
 			<!-- End top-post Area -->
-			<!-- Start latest-post Area -->
-			<section class="latest-post-area pb-120">
+
+	<!-- Start latest-post Area -->
+	<section class="latest-post-area pb-120">
 				<div class="container no-padding">
 					<div class="row">
 						<div class="col-lg-8 post-list">
 							<!-- Start latest-post Area -->
 							<div class="latest-post-wrap">
 								<h4 class="cat-title">Latest News</h4>
+								<?php
+									$args = array( 'numberposts' => 10, 'order'=> 'ASC', 'orderby' => 'ID' );
+									$postslist = get_posts( $args );
+									foreach ($postslist as $post) :  setup_postdata($post); ?> 
+
 								<div class="single-latest-post row align-items-center">
 									<div class="col-lg-5 post-left">
 										<div class="feature-img relative">
 											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="img/l1.jpg" alt="">
+											<img class="img-fluid" src="<?php the_post_thumbnail_url();?>" alt="<?php the_title();?>">
 										</div>
 										<ul class="tags">
-											<li><a href="#">Lifestyle</a></li>
+											<?php the_category()?>
 										</ul>
 									</div>
 									<div class="col-lg-7 post-right">
-										<a href="image-post.html">
-											<h4>A Discount Toner Cartridge Is
-											Better Than Ever.</h4>
+										<a href="<?php the_permalink();?>">
+											<?php the_title( '<h4>', '</h4>');?>
 										</a>
 										<ul class="meta">
-											<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-											<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-											<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-										</ul>
-										<p class="excert">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-										</p>
-									</div>
-								</div>
-								<div class="single-latest-post row align-items-center">
-									<div class="col-lg-5 post-left">
-										<div class="feature-img relative">
-											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="img/l2.jpg" alt="">
-										</div>
-										<ul class="tags">
-											<li><a href="#">Science</a></li>
-										</ul>
-									</div>
-									<div class="col-lg-7 post-right">
-										<a href="image-post.html">
-											<h4>A Discount Toner Cartridge Is
-											Better Than Ever.</h4>
-										</a>
-										<ul class="meta">
-											<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-											<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-											<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
+											<li><a href="#"><span class="lnr lnr-user"></span><?php the_author();?></a></li>
+											<li><a href="#"><span class="lnr lnr-calendar-full"></span><?php echo esc_html(human_time_diff( get_the_time('U'), current_time('timestamp') )) . ' ago'; ?></a></li>
+											<li><a href="#"><span class="lnr lnr-bubble"></span><?php echo esc_html(get_comments_number($post->ID));?></a></li>
 										</ul>
 										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+											<?php the_excerpt();?>
 										</p>
 									</div>
 								</div>
-								<div class="single-latest-post row align-items-center">
-									<div class="col-lg-5 post-left">
-										<div class="feature-img relative">
-											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="img/l3.jpg" alt="">
-										</div>
-										<ul class="tags">
-											<li><a href="#">Travel</a></li>
-										</ul>
-									</div>
-									<div class="col-lg-7 post-right">
-										<a href="image-post.html">
-											<h4>A Discount Toner Cartridge Is
-											Better Than Ever.</h4>
-										</a>
-										<ul class="meta">
-											<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-											<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-											<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-										</ul>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-										</p>
-									</div>
-								</div>
-								<div class="single-latest-post row align-items-center">
-									<div class="col-lg-5 post-left">
-										<div class="feature-img relative">
-											<div class="overlay overlay-bg"></div>
-											<img class="img-fluid" src="img/l4.jpg" alt="">
-										</div>
-										<ul class="tags">
-											<li><a href="#">Fashion</a></li>
-										</ul>
-									</div>
-									<div class="col-lg-7 post-right">
-										<a href="image-post.html">
-											<h4>A Discount Toner Cartridge Is
-											Better Than Ever.</h4>
-										</a>
-										<ul class="meta">
-											<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-											<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-											<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-										</ul>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-										</p>
-									</div>
-								</div>
+
+          					    <?php endforeach; ?>
+
+					
 							</div>
-							<!-- End latest-post Area -->
-							
+					<!-- End latest-post Area -->
+
 							<!-- Start banner-ads Area -->
-							<div class="col-lg-12 ad-widget-wrap mt-30 mb-30">
+							<!-- <div class="col-lg-12 ad-widget-wrap mt-30 mb-30">
 								<img class="img-fluid" src="img/banner-ad.jpg" alt="">
-							</div>
+							</div> -->
 							<!-- End banner-ads Area -->
+
 							<!-- Start popular-post Area -->
 							<div class="popular-post-wrap">
 								<h4 class="title">Popular Posts</h4>
-								<div class="feature-post relative">
-									<div class="feature-img relative">
-										<div class="overlay overlay-bg"></div>
-										<img class="img-fluid" src="img/f1.jpg" alt="">
-									</div>
-									<div class="details">
-										<ul class="tags">
-											<li><a href="#">Food Habit</a></li>
-										</ul>
-										<a href="image-post.html">
-											<h3>A Discount Toner Cartridge Is Better Than Ever.</h3>
-										</a>
-										<ul class="meta">
-											<li><a href="#"><span class="lnr lnr-user"></span>Mark wiens</a></li>
-											<li><a href="#"><span class="lnr lnr-calendar-full"></span>03 April, 2018</a></li>
-											<li><a href="#"><span class="lnr lnr-bubble"></span>06 Comments</a></li>
-										</ul>
-									</div>
-								</div>
+								
 								<div class="row mt-20 medium-gutters">
 									<div class="col-lg-6 single-popular-post">
 										<div class="feature-img-wrap relative">
@@ -614,79 +401,10 @@
 				</div>
 			</section>
 			<!-- End latest-post Area -->
-		</div>
-		
-		<!-- start footer Area -->
-		<footer class="footer-area section-gap">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-3 col-md-6 single-footer-widget">
-						<h4>Top Products</h4>
-						<ul>
-							<li><a href="#">Managed Website</a></li>
-							<li><a href="#">Manage Reputation</a></li>
-							<li><a href="#">Power Tools</a></li>
-							<li><a href="#">Marketing Service</a></li>
-						</ul>
-					</div>
-					<div class="col-lg-2 col-md-6 single-footer-widget">
-						<h4>Quick Links</h4>
-						<ul>
-							<li><a href="#">Jobs</a></li>
-							<li><a href="#">Brand Assets</a></li>
-							<li><a href="#">Investor Relations</a></li>
-							<li><a href="#">Terms of Service</a></li>
-						</ul>
-					</div>
-					<div class="col-lg-2 col-md-6 single-footer-widget">
-						<h4>Features</h4>
-						<ul>
-							<li><a href="#">Jobs</a></li>
-							<li><a href="#">Brand Assets</a></li>
-							<li><a href="#">Investor Relations</a></li>
-							<li><a href="#">Terms of Service</a></li>
-						</ul>
-					</div>
-					<div class="col-lg-2 col-md-6 single-footer-widget">
-						<h4>Resources</h4>
-						<ul>
-							<li><a href="#">Guides</a></li>
-							<li><a href="#">Research</a></li>
-							<li><a href="#">Experts</a></li>
-							<li><a href="#">Agencies</a></li>
-						</ul>
-					</div>
-					<div class="col-lg-3 col-md-6 single-footer-widget">
-						<h4>Instragram Feed</h4>
-						<ul class="instafeed d-flex flex-wrap">
-							<li><img src="img/i1.jpg" alt=""></li>
-							<li><img src="img/i2.jpg" alt=""></li>
-							<li><img src="img/i3.jpg" alt=""></li>
-							<li><img src="img/i4.jpg" alt=""></li>
-							<li><img src="img/i5.jpg" alt=""></li>
-							<li><img src="img/i6.jpg" alt=""></li>
-							<li><img src="img/i7.jpg" alt=""></li>
-							<li><img src="img/i8.jpg" alt=""></li>
-						</ul>
-					</div>
-				</div>
-				<div class="footer-bottom row align-items-center">
-					<p class="footer-text m-0 col-lg-8 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-					<div class="col-lg-4 col-md-12 footer-social">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-dribbble"></i></a>
-						<a href="#"><i class="fa fa-behance"></i></a>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<!-- End footer Area -->
-        
 
 
+
+</div>
 
 <?php get_footer();?>
 
