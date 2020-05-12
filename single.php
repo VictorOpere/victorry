@@ -1,23 +1,21 @@
 <?php get_header();?>
 
-<div class="site-main-container">
-			<!-- Start top-post Area -->
-			<section class="top-post-area pt-10">
-				<div class="container no-padding">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="hero-nav-area">
-								<h1 class="text-white">About Us</h1>
-								<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span><a href="about.html">About Us </a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- End top-post Area -->
-</div>
+		<?php if ( have_posts() ) : ?>
+
+		<?php while ( have_posts() ) : the_post(); ?>
+				
+		<?php get_template_part( '/inc/template-parts/content-single', get_post_format());?>
+
+			<?php if (comments_open()):?>
+			
+				<?php comments_template();?>
+			
+
+			<?php endif; ?>
 
 
+		<?php endwhile; ?>
+		<?php endif; ?>
 
 
 <?php get_footer();?>

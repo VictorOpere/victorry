@@ -110,8 +110,8 @@
           
 					</nav><!-- #nav-menu-container -->
 					<div class="navbar-right">
-						<form class="Search">
-							<input type="text" class="form-control Search-box" name="Search-box" id="Search-box" placeholder="Search">
+						<form class="Search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+							<input type="text" class="form-control Search-box" name="s" id="Search-box" placeholder="Search">
 							<label for="Search-box" class="Search-box-label">
 								<span class="lnr lnr-magnifier"></span>
 							</label>
