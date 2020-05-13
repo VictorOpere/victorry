@@ -71,7 +71,7 @@
 								
 								<div class="row mt-20 medium-gutters">
 								<?php
-									$args = array( 'numberposts' => 8,'order'=> 'DESC', 'orderby' => 'meta_value_num', );
+									$args = array( 'numberposts' => 8,'order'=> 'ASC', 'orderby' => 'meta_value_num', );
 									$postslist = get_posts( $args );
 									foreach ($postslist as $post) :  setup_postdata($post); ?> 
 
