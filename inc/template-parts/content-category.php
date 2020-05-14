@@ -1,14 +1,5 @@
 
-			<!-- Start latest-post Area -->
-			<section class="latest-post-area pb-120">
-				<div class="container no-padding">
-					<div class="row">
-						<div class="col-lg-8 post-list">
-							<!-- Start latest-post Area -->
-							<div class="latest-post-wrap">
-								<h4 class="cat-title">Latest News</h4>
-							
-								<div class="single-latest-post row align-items-center">
+	<div class="single-latest-post row align-items-center">
 									<div class="col-lg-5 post-left">
 										<div class="feature-img relative">
 											<div class="overlay overlay-bg"></div>
@@ -27,16 +18,11 @@
 											<li><a href="#"><span class="lnr lnr-calendar-full"></span><?php echo esc_html(human_time_diff( get_the_time('U'), current_time('timestamp') )) . ' ago'; ?></a></li>
 											<li><a href="#"><span class="lnr lnr-bubble"></span><?php echo esc_html(get_comments_number($post->ID));?></a></li>
 										</ul>
-										<p>
+										<p class="excert">
 											<?php the_excerpt();?>
 										</p>
 									</div>
-								</div>
-								<div class="load-more">
-									<a href="#" class="primary-btn">Load More Posts</a>
-								</div>
-								
-							</div>
-							<!-- End latest-post Area -->
+</div>
+							
 				
 		

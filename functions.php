@@ -209,4 +209,97 @@ function victorry_register_menus()
 add_action( 'init', 'victorry_register_menus');
 
 
+/*
+	 * Lets register the sidebars for our theme
+	 *
+	 * @link 
+     *****
+     // Include custom sidebar widgets
+     
+     
+*/
+
+
+function victorry_register_sidebars() {
+
+    /* Register the 'primary' sidebar. */
+    register_sidebar(
+        array(
+            'id'            => 'primary',
+            'name'          => __( 'Primary Sidebar', 'victorry' ),
+            'description'   => __( 'This is the Primary Sidebar For The Theme.', 'victorry' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s single-sidebar-widget">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h6 class="title">',
+            'after_title'   => '</h6>',
+        )
+    );
+    /* Repeat register_sidebar() code for additional sidebars. */
+
+    register_sidebar(
+        array(
+            'id'            => 'footer-one',
+            'name'          => __( 'First Footer Sidebar', 'victorry' ),
+            'description'   => __( 'This is the First Footer Sidebar.', 'victorry' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4>',
+            'after_title'   => '</h4>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'id'            => 'footer-two',
+            'name'          => __( 'Second Footer Sidebar', 'victorry' ),
+            'description'   => __( 'This is the Second Footer Sidebar.', 'victorry' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4>',
+            'after_title'   => '</h4>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'id'            => 'footer-three',
+            'name'          => __( 'Third Footer Sidebar', 'victorry' ),
+            'description'   => __( 'This is the Third Footer Sidebar', 'victorry' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4>',
+            'after_title'   => '</h4>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'id'            => 'footer-four',
+            'name'          => __( 'Fourth Footer Sidebar', 'victorry' ),
+            'description'   => __( 'This is the Fourth Footer Sidebar', 'victorry' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s ">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4>',
+            'after_title'   => '</h4>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'id'            => 'footer-five',
+            'name'          => __( 'Fifth Footer Sidebar', 'victorry' ),
+            'description'   => __( 'This is the Fifth Footer Sidebar', 'victorry' ),
+            'before_widget' => '<div id="%1$s" class="widget %2$s ">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4>',
+            'after_title'   => '</h4>',
+        )
+    );
+
+
+}
+
+add_action( 'widgets_init', 'victorry_register_sidebars' );
+
+
 

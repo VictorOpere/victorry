@@ -3,53 +3,19 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3 col-md-6 single-footer-widget">
-						<h4>Top Products</h4>
-						<ul>
-							<li><a href="#">Managed Website</a></li>
-							<li><a href="#">Manage Reputation</a></li>
-							<li><a href="#">Power Tools</a></li>
-							<li><a href="#">Marketing Service</a></li>
-						</ul>
+						<?php get_sidebar( 'footer-one' );?>
 					</div>
 					<div class="col-lg-2 col-md-6 single-footer-widget">
-						<h4>Quick Links</h4>
-						<ul>
-							<li><a href="#">Jobs</a></li>
-							<li><a href="#">Brand Assets</a></li>
-							<li><a href="#">Investor Relations</a></li>
-							<li><a href="#">Terms of Service</a></li>
-						</ul>
+						<?php get_sidebar( 'footer-two' );?>
 					</div>
 					<div class="col-lg-2 col-md-6 single-footer-widget">
-						<h4>Features</h4>
-						<ul>
-							<li><a href="#">Jobs</a></li>
-							<li><a href="#">Brand Assets</a></li>
-							<li><a href="#">Investor Relations</a></li>
-							<li><a href="#">Terms of Service</a></li>
-						</ul>
+						<?php get_sidebar( 'footer-three' );?>
 					</div>
 					<div class="col-lg-2 col-md-6 single-footer-widget">
-						<h4>Resources</h4>
-						<ul>
-							<li><a href="#">Guides</a></li>
-							<li><a href="#">Research</a></li>
-							<li><a href="#">Experts</a></li>
-							<li><a href="#">Agencies</a></li>
-						</ul>
+						<?php get_sidebar( 'footer-four' );?>
 					</div>
 					<div class="col-lg-3 col-md-6 single-footer-widget">
-						<h4>Instragram Feed</h4>
-						<ul class="instafeed d-flex flex-wrap">
-							<li><img src="img/i1.jpg" alt=""></li>
-							<li><img src="img/i2.jpg" alt=""></li>
-							<li><img src="img/i3.jpg" alt=""></li>
-							<li><img src="img/i4.jpg" alt=""></li>
-							<li><img src="img/i5.jpg" alt=""></li>
-							<li><img src="img/i6.jpg" alt=""></li>
-							<li><img src="img/i7.jpg" alt=""></li>
-							<li><img src="img/i8.jpg" alt=""></li>
-						</ul>
+						<?php get_sidebar( 'footer-five' );?>
 					</div>
 				</div>
 				<div class="footer-bottom row align-items-center">
