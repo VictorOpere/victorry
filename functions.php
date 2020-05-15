@@ -303,3 +303,88 @@ add_action( 'widgets_init', 'victorry_register_sidebars' );
 
 
 
+/*
+	 * Placing the required files needed for our theme customizer to work
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+     *****
+     
+     
+*/
+
+require_once(get_template_directory( ).'/inc/customizer.php');
+
+
+/*
+	 * Lets register the Block editor settings and styles for our theme
+	 *
+	 * @link 
+     *****  
+*/
+
+function victorry_block_setup_theme_supported_features() {
+
+    // lets add theme support for the editor color palette
+
+    add_theme_support( 'editor-color-palette', array(
+        array(
+            'name' => __( 'radiant pink', 'victorry' ),
+            'slug' => 'radiant-pink',
+            'color' => '#f6214b',
+        ),
+        array(
+            'name' => __( 'dark blue', 'victorry' ),
+            'slug' => 'dark-blue',
+            'color' => '#04091e',
+        ),
+        array(
+            'name' => __( 'light gray', 'victorry' ),
+            'slug' => 'light-gray',
+            'color' => '#6c757d',
+        ),
+    ) );
+
+    // lets add theme support for align-wide for editor images
+
+    add_theme_support( 'align-wide' );
+
+    // lets add theme support for editor block font sizes
+
+    add_theme_support( 'editor-font-sizes', array(
+        array(
+            'name' => __( 'Small', 'victorry' ),
+            'size' => 12,
+            'slug' => 'small'
+        ),
+        array(
+            'name' => __( 'Regular', 'victorry' ),
+            'size' => 16,
+            'slug' => 'regular'
+        ),
+        array(
+            'name' => __( 'Large', 'victorry' ),
+            'size' => 36,
+            'slug' => 'large'
+        ),
+        array(
+            'name' => __( 'Huge', 'victorry' ),
+            'size' => 50,
+            'slug' => 'huge'
+        )
+    ) );
+
+    // lets add theme support for editor responsive embedded edits
+
+    add_theme_support( 'responsive-embeds' );
+
+    // lets add the theme support for editor block styles
+    
+    add_theme_support( 'wp-block-styles' );
+}
+ 
+add_action( 'after_setup_theme', 'victorry_block_setup_theme_supported_features' );
+
+
+
+
+

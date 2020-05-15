@@ -54,16 +54,16 @@
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-left no-padding">
 							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-behance"></i></a></li>
+								<li><a href="<?php echo get_theme_mod('facebook_page_link');?>"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="<?php echo get_theme_mod('twitter_page_link');?>"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="<?php echo get_theme_mod('instagram_page_link');?>"><i class="fa fa-instagram"></i></a></li>
+								<li><a href="<?php echo get_theme_mod('youtube_page_link');?>"><i class="fa fa-youtube"></i></a></li>
 							</ul>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6 col-6 header-top-right no-padding">
 							<ul>
-								<li><a href="tel:+440 012 3654 896"><span class="lnr lnr-phone-handset"></span><span>+440 012 3654 896</span></a></li>
-								<li><a href="mailto:support@colorlib.com"><span class="lnr lnr-envelope"></span><span>support@colorlib.com</span></a></li>
+								<li><a href="tel:<?php echo esc_attr( get_theme_mod('telephone_number_settings') );?>"><span class="lnr lnr-phone-handset"></span><span><?php echo get_theme_mod('telephone_number_settings');?></span></a></li>
+								<li><a href="mailto:<?php echo esc_attr( get_theme_mod('website_email_settings') );?>"><span class="lnr lnr-envelope"></span><span><?php echo get_theme_mod('website_email_settings');?></span></a></li>
 							</ul>
 						</div>
 					</div>
