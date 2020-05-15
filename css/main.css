@@ -3248,3 +3248,15 @@ div.thumbnail_container .overlay-bg {
   background: #f6214b;
 }
 
+div.depth-2 {
+  padding-left: 50px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+div.depth-3 {
+  padding-left: 75px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+

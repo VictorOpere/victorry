@@ -35,9 +35,9 @@ if( post_password_required() ){
 			<?php 
 				
 				$args = array(
-					'walker'			=> null,
+					'walker'			=> new Victorry_Walker_Comment(),
 					'max_depth' 		=> '3',
-					'style'				=> '',
+					'style'				=> 'div',
 					'callback'			=> '',
 					'end-callback'		=> null,
 					'type'				=> 'all',

@@ -315,6 +315,41 @@ add_action( 'widgets_init', 'victorry_register_sidebars' );
 require_once(get_template_directory( ).'/inc/customizer.php');
 
 
+
+
+
+/*
+	 * Placing the required files needed for our theme Custom comment walker.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+     *****
+     
+     
+*/
+
+
+
+
+require get_template_directory() . '/inc/class-victorry-walker-comment.php';
+
+
+/*
+	 * Lets add some custom classes to the reply link in comment template
+	 *
+	 * @link 
+     *****  
+*/
+
+
+function victorry_custom_comment_reply_link($content) {
+    $extra_classes = 'btn-reply text-uppercase';
+    return preg_replace( '/comment-reply-link/', 'comment-reply-link ' . $extra_classes, $content);
+}
+
+add_filter('comment_reply_link', 'victorry_custom_comment_reply_link', 99);
+
+
+
 /*
 	 * Lets register the Block editor settings and styles for our theme
 	 *
