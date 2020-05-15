@@ -349,6 +349,34 @@ function victorry_custom_comment_reply_link($content) {
 add_filter('comment_reply_link', 'victorry_custom_comment_reply_link', 99);
 
 
+/**
+ * Comments
+ */
+/**
+ * Check if the specified comment is written by the author of the post commented on.
+ *
+ * @param object $comment Comment data.
+ *
+ * @return bool
+ */
+function victorry_is_comment_by_post_author( $comment = null ) {
+
+	if ( is_object( $comment ) && $comment->user_id > 0 ) {
+
+		$user = get_userdata( $comment->user_id );
+		$post = get_post( $comment->comment_post_ID );
+
+		if ( ! empty( $user ) && ! empty( $post ) ) {
+
+			return $comment->user_id === $post->post_author;
+
+		}
+	}
+	return false;
+
+}
+
+
 
 /*
 	 * Lets register the Block editor settings and styles for our theme

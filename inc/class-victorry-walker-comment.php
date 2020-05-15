@@ -36,8 +36,20 @@ class Victorry_Walker_Comment extends Walker_Comment {
 						    <?php endif; ?>
 					 </div>
                         <div class="desc">
-                            <h5><a href="<?php echo get_comment_author_url(); ?>"><?php echo esc_html(get_comment_author());?></a></h5>
-                                <p class="date"><?php comment_date();?> at <?php comment_time();?> </p>
+                            <?php $by_post_author = victorry_is_comment_by_post_author( $comment ); ?>
+
+                            <h5><?php echo esc_html(get_comment_author());?>
+
+                                <?php 
+
+                                    if ( $by_post_author ) {
+                                        echo ' <span class="badge badge-pill badge-success">' . __( ' Author', 'victorry' ) . '</span>';
+                                    }
+                                
+                                ;?>
+                        
+                            </h5>
+                                <p class="date"><?php comment_date();?> at <?php comment_time();?> <?php edit_comment_link(__('(Edit)'),'  ','') ?> </p>
                                     <p class="comment">
                                     <?php if ( '0' == $comment->comment_approved ) : ?>
 					                    <p class="card-text comment-awaiting-moderation label label-info text-muted small"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
