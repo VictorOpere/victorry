@@ -3,7 +3,7 @@
 /**
  * Add our Customizer content
  */
-function perfect_customize_register( $wp_customize ) {
+function victorry_customize_register( $wp_customize ) {
 
    // Add all your Customizer content (i.e. Panels, Sections, Settings & Controls) here...
 
@@ -445,4 +445,4 @@ function perfect_customize_register( $wp_customize ) {
 
 
 };
-add_action( 'customize_register', 'perfect_customize_register' );
+add_action( 'customize_register', 'victorry_customize_register' );
