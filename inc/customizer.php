@@ -10,6 +10,131 @@ function perfect_customize_register( $wp_customize ) {
       /**
      * Add our Header & Navigation Panel
      */
+
+    $wp_customize->add_panel( 'advertisement_panel',
+    array(
+        'title' => __( 'Advertisement Section', 'victorry' ),
+        'description' => esc_html__( 'Add Your Advertisement Banner', 'victorry' ), // Include html tags such as 
+
+        'priority' => 160, // Not typically needed. Default is 160
+        'capability' => 'edit_theme_options', // Not typically needed. Default is edit_theme_options
+        'theme_supports' => '', // Rarely needed
+        'active_callback' => '', // Rarely needed
+    )
+    );
+
+     /**
+            * Add our Section
+         */
+        $wp_customize->add_section( 'advertisement_top_section',
+            array(
+            'title' => __( 'Top Panel Banner', 'victorry' ),
+            'description' => esc_html__( 'Add Your Top Pannel Advertisement Banner.', 'victorry' ),
+            'panel' => 'advertisement_panel', // Only needed if adding your Section to a Panel
+            'priority' => 160, // Not typically needed. Default is 160
+            'capability' => 'edit_theme_options', // Not typically needed. Default is edit_theme_options
+            'theme_supports' => '', // Rarely needed
+            'active_callback' => '', // Rarely needed
+            'description_hidden' => 'false', // Rarely needed. Default is False
+            )
+        );
+
+        /**
+            * Add our Section For The Middle Page Customizer Advertisement Banner 
+         */
+        $wp_customize->add_section( 'advertisement_middlepage_section',
+            array(
+            'title' => __( 'Middle Page Banner', 'victorry' ),
+            'description' => esc_html__( 'Add Your Middle Page Panel Advertisement Banner.', 'victorry' ),
+            'panel' => 'advertisement_panel', // Only needed if adding your Section to a Panel
+            'priority' => 160, // Not typically needed. Default is 160
+            'capability' => 'edit_theme_options', // Not typically needed. Default is edit_theme_options
+            'theme_supports' => '', // Rarely needed
+            'active_callback' => '', // Rarely needed
+            'description_hidden' => 'false', // Rarely needed. Default is False
+            )
+        );
+
+        $wp_customize->add_setting( 'advertisement_top_banner_settings',
+            array(
+                'default' => '', // Optional.
+                'transport' => 'refresh', // Optional. 'refresh' or 'postMessage'. Default: 'refresh'
+                'type' => 'theme_mod', // Optional. 'theme_mod' or 'option'. Default: 'theme_mod'
+                'capability' => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
+                'theme_supports' => '', // Optional. Rarely needed
+                'validate_callback' => '', // Optional. The name of the function that will be called to validate Customizer settings
+                'sanitize_callback' => 'absint', // Optional. The name of the function that will be called to sanitize the input data before saving it to the database
+                'sanitize_js_callback' => '', // Optional. The name of the function that will be called to sanitize the data before outputting to javascript code. Basically to_json.
+                'dirty' => false, // Optional. Rarely needed. Whether or not the setting is initially dirty when created. Default: False
+            )
+        );
+
+        /**
+            * Add our Settings For The Middle Page Customizer Advertisement Banner 
+         */
+
+        $wp_customize->add_setting( 'advertisement_middlepage_banner_settings',
+        array(
+            'default' => '', // Optional.
+            'transport' => 'refresh', // Optional. 'refresh' or 'postMessage'. Default: 'refresh'
+            'type' => 'theme_mod', // Optional. 'theme_mod' or 'option'. Default: 'theme_mod'
+            'capability' => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
+            'theme_supports' => '', // Optional. Rarely needed
+            'validate_callback' => '', // Optional. The name of the function that will be called to validate Customizer settings
+            'sanitize_callback' => 'absint', // Optional. The name of the function that will be called to sanitize the input data before saving it to the database
+            'sanitize_js_callback' => '', // Optional. The name of the function that will be called to sanitize the data before outputting to javascript code. Basically to_json.
+            'dirty' => false, // Optional. Rarely needed. Whether or not the setting is initially dirty when created. Default: False
+        )
+        );
+
+
+        $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'advertisement_top_banner_settings',
+                            array(
+                                'label' => __( 'Top Panel Advertisement Banner' ),
+                                'description' => esc_html__( 'Choose Your Top Panel Advertisement Banner' ),
+                                'section' => 'advertisement_top_section',
+                                'flex_width' => false, // Optional. Default: false
+                                'flex_height' => true, // Optional. Default: false
+                                'width' => 720, // Optional. Default: 150
+                                'height' => 90, // Optional. Default: 150
+                                'button_labels' => array( // Optional.
+                                    'select' => __( 'Select Image' ),
+                                    'change' => __( 'Change Image' ),
+                                    'remove' => __( 'Remove' ),
+                                    'default' => __( 'Default' ),
+                                    'placeholder' => __( 'No image selected' ),
+                                    'frame_title' => __( 'Select Image' ),
+                                    'frame_button' => __( 'Choose Image' ),
+                                )
+                            )
+        ));
+
+        /**
+            * Add our Controls For The Middle Page Customizer Advertisement Banner 
+         */
+
+        $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'advertisement_middlepage_banner_settings',
+            array(
+                'label' => __( 'Middle Page Advertisement Banner' ),
+                'description' => esc_html__( 'Choose Your Middle Page Advertisement Banner' ),
+                'section' => 'advertisement_middlepage_section',
+                'flex_width' => false, // Optional. Default: false
+                'flex_height' => true, // Optional. Default: false
+                'width' => 720, // Optional. Default: 150
+                'height' => 90, // Optional. Default: 150
+                'button_labels' => array( // Optional.
+                    'select' => __( 'Select Image' ),
+                    'change' => __( 'Change Image' ),
+                    'remove' => __( 'Remove' ),
+                    'default' => __( 'Default' ),
+                    'placeholder' => __( 'No image selected' ),
+                    'frame_title' => __( 'Select Image' ),
+                    'frame_button' => __( 'Choose Image' ),
+                )
+            )
+        ));
+
+
     $wp_customize->add_panel( 'add_contacts_panel',
     array(
         'title' => __( 'Contacts Section', 'victorry' ),

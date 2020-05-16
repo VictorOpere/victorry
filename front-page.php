@@ -60,9 +60,9 @@
 					<!-- End latest-post Area -->
 
 							<!-- Start banner-ads Area -->
-							<!-- <div class="col-lg-12 ad-widget-wrap mt-30 mb-30">
-								<img class="img-fluid" src="img/banner-ad.jpg" alt="">
-							</div> -->
+							<div class="col-lg-12 ad-widget-wrap mt-30 mb-30">
+								<img class="img-fluid" src="<?php echo wp_get_attachment_url( get_theme_mod( 'advertisement_middlepage_banner_settings' ) );?>" alt="middle page ad">
+							</div>
 							<!-- End banner-ads Area -->
 
 							<!-- Start popular-post Area -->
