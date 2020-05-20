@@ -5,6 +5,17 @@
  */
 function victorry_customize_register( $wp_customize ) {
 
+    /*
+	 * Placing the required files needed for our theme Custom comment walker.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+     *****
+     
+     
+*/
+
+
+
    // Add all your Customizer content (i.e. Panels, Sections, Settings & Controls) here...
 
       /**

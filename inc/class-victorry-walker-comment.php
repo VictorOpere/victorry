@@ -43,7 +43,7 @@ class Victorry_Walker_Comment extends Walker_Comment {
                                 <?php 
 
                                     if ( $by_post_author ) {
-                                        echo ' <span class="badge badge-pill badge-success">' . __( ' Author', 'victorry' ) . '</span>';
+                                        echo ' <span class="badge badge-pill badge-primary">' . __( ' Author', 'victorry' ) . '</span>';
                                     }
                                 
                                 ;?>

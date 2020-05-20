@@ -7,7 +7,16 @@
 					<div class="row small-gutters">
 						<div class="col-lg-12">
 							<div class="news-tracker-wrap">
-								<h6><span>Breaking News:</span>   <a href="#">Astronomy Binoculars A Great Alternative</a></h6>
+							<?php
+									$args = array( 'numberposts' => 1, 'order'=> 'DESC', 'orderby' => 'ID' );
+									$postslist = get_posts( $args );
+									foreach ($postslist as $post) :  setup_postdata($post); ?> 
+
+								<h6><span>Breaking News:</span>   <a href="<?php the_permalink();?>">	<?php the_title();?></a></h6>
+
+							<?php endforeach; ?>
+
+
 							</div>
 						</div>
 					</div>
