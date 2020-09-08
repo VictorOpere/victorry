@@ -7,13 +7,21 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="hero-nav-area">
-								<h1 class="text-white"><?php the_archive_title();?></h1>
-								<p class="text-white link-nav"><a href="<?php echo esc_url( home_url('/') );?>">Home </a>  <span class="lnr lnr-arrow-right"></span> <?php the_archive_title();?></p>
+								<h1 class="text-white">Search Results</h1>
+								<p class="text-white link-nav"><a href="<?php echo esc_url( home_url('/') );?>">Home </a>  <span class="lnr lnr-arrow-right"></span> Search Results</p>
 							</div>
 						</div>
 						<div class="col-lg-12">
 							<div class="news-tracker-wrap">
-								<h6><span>Breaking News:</span>   <a href="#">Astronomy Binoculars A Great Alternative</a></h6>
+							<?php
+								$args = array( 'numberposts' => 1, 'order'=> 'DESC', 'orderby' => 'date');
+								$postslist = get_posts( $args );
+								foreach ($postslist as $post) :  setup_postdata($post); ?>
+
+								<h6><span>Breaking News:</span>   <a href="<?php the_permalink();?>"><?php the_title();?></a></h6>
+							
+							<?php endforeach; ?>
+
 							</div>
 						</div>
 					</div>
@@ -30,15 +38,12 @@
 							<div class="latest-post-wrap">
 								<h4 class="cat-title">Latest News</h4>
 								
-			<?php if ( have_posts() ) :;?> 
-                    <?php while ( have_posts() ) : the_post(); ?>
-                         <?php get_template_part( 'inc/template-parts/content-search', get_post_format());?> 
-                    <?php endwhile; ?>
-            <?php endif; ?>
+								<?php if ( have_posts() ) :;?> 
+										<?php while ( have_posts() ) : the_post(); ?>
+											<?php get_template_part( 'inc/template-parts/content-search', get_post_format());?> 
+										<?php endwhile; ?>
+								<?php endif; ?>
 
-								<div class="load-more">
-									<a href="#" class="primary-btn">Load More Posts</a>
-								</div>
 								
 							</div>
 							<!-- End latest-post Area -->

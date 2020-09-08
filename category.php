@@ -13,7 +13,15 @@
 						</div>
 						<div class="col-lg-12">
 							<div class="news-tracker-wrap">
-								<h6><span>Breaking News:</span>   <a href="#">Astronomy Binoculars A Great Alternative</a></h6>
+								<?php
+									$args = array( 'numberposts' => 1, 'order'=> 'DESC', 'orderby' => 'date');
+									$postslist = get_posts( $args );
+									foreach ($postslist as $post) :  setup_postdata($post); ?>
+
+									<h6><span>Breaking News:</span>   <a href="<?php the_permalink();?>"><?php the_title();?></a></h6>
+								
+								<?php endforeach; ?>
+
 							</div>
 						</div>
 					</div>
@@ -30,15 +38,13 @@
 							<div class="latest-post-wrap">
 								<h4 class="cat-title">Latest News</h4>
 								
-			<?php if ( have_posts() ) :;?> 
-                    <?php while ( have_posts() ) : the_post(); ?>
-                         <?php get_template_part( 'inc/template-parts/content-category', get_post_format());?> 
-                    <?php endwhile; ?>
-            <?php endif; ?>
+									<?php if ( have_posts() ) :;?> 
+											<?php while ( have_posts() ) : the_post(); ?>
+												<?php get_template_part( 'inc/template-parts/content-category', get_post_format());?> 
+											<?php endwhile; ?>
+									<?php endif; ?>
 
-								<div class="load-more">
-									<a href="#" class="primary-btn">Load More Posts</a>
-								</div>
+								
 								
 							</div>
 							<!-- End latest-post Area -->

@@ -1,22 +1,108 @@
 <?php get_header();?>
 
 <div class="site-main-container">
+
 			<!-- Start top-post Area -->
 			<section class="top-post-area pt-10">
 				<div class="container no-padding">
 					<div class="row small-gutters">
-						<div class="col-lg-12">
-							<div class="news-tracker-wrap">
-							<?php
-									$args = array( 'numberposts' => 1, 'order'=> 'DESC', 'orderby' => 'ID' );
-									$postslist = get_posts( $args );
-									foreach ($postslist as $post) :  setup_postdata($post); ?> 
+						<div class="col-lg-8 top-post-left">
 
-								<h6><span>Breaking News:</span>   <a href="<?php the_permalink();?>">	<?php the_title();?></a></h6>
+						<?php
+							$args = array( 'numberposts' => 1, 'order'=> 'DESC', 'orderby' => 'date' );
+							$postslist = get_posts( $args );
+                			foreach ($postslist as $post) :  setup_postdata($post); ?>
+
+							<div class="feature-image-thumb relative">
+								<div class="overlay overlay-bg"></div>
+								<img class="img-fluid" src="<?php the_post_thumbnail_url();?>" alt="">
+							</div>
+							<div class="top-post-details">
+								<ul class="tags">
+									<?php the_category()?>
+								</ul>
+								<a href="<?php the_permalink();?>">
+									<?php the_title( '<h3>', '</h3>');?>
+								</a>
+								<ul class="meta">
+											<li><a href="#"><span class="lnr lnr-user"></span><?php the_author();?></a></li>
+											<li><a href="#"><span class="lnr lnr-calendar-full"></span><?php echo esc_html(human_time_diff( get_the_time('U'), current_time('timestamp') )) . ' ago'; ?></a></li>
+											<li><a href="#"><span class="lnr lnr-bubble"></span><?php echo esc_html(get_comments_number($post->ID));?></a></li>
+								</ul>
+							</div>
+
+							<?php endforeach; ?>
+
+						</div>
+						<div class="col-lg-4 top-post-right">
+							<?php
+								$args = array( 'numberposts' => 1, 'order'=> 'DESC', 'orderby' => 'date','offset' => 1);
+								$postslist = get_posts( $args );
+								foreach ($postslist as $post) :  setup_postdata($post); ?>
+
+							<div class="single-top-post">
+								<div class="feature-image-thumb relative">
+									<div class="overlay overlay-bg"></div>
+									<img class="img-fluid" src="<?php the_post_thumbnail_url();?>" alt="">
+								</div>
+								<div class="top-post-details">
+									<ul class="tags">
+										<?php the_category()?>
+									</ul>
+									<a href="<?php the_permalink();?>">
+										<?php the_title( '<h4>', '</h4>');?>
+									</a>
+									<ul class="meta">
+											<li><a href="#"><span class="lnr lnr-user"></span><?php the_author();?></a></li>
+											<li><a href="#"><span class="lnr lnr-calendar-full"></span><?php echo esc_html(human_time_diff( get_the_time('U'), current_time('timestamp') )) . ' ago'; ?></a></li>
+											<li><a href="#"><span class="lnr lnr-bubble"></span><?php echo esc_html(get_comments_number($post->ID));?></a></li>
+									</ul>
+								</div>
+							</div>
 
 							<?php endforeach; ?>
 
 
+							<div class="single-top-post mt-10">
+
+							<?php
+								$args = array( 'numberposts' => 1, 'order'=> 'DESC', 'orderby' => 'date','offset' => 2);
+								$postslist = get_posts( $args );
+								foreach ($postslist as $post) :  setup_postdata($post); ?>
+
+								<div class="feature-image-thumb relative">
+									<div class="overlay overlay-bg"></div>
+									<img class="img-fluid" src="<?php the_post_thumbnail_url();?>" alt="">
+								</div>
+								<div class="top-post-details">
+									<ul class="tags">
+										<?php the_category()?>
+									</ul>
+									<a href="<?php the_permalink();?>">
+										<?php the_title( '<h4>', '</h4>');?>
+									</a>
+									<ul class="meta">
+											<li><a href="#"><span class="lnr lnr-user"></span><?php the_author();?></a></li>
+											<li><a href="#"><span class="lnr lnr-calendar-full"></span><?php echo esc_html(human_time_diff( get_the_time('U'), current_time('timestamp') )) . ' ago'; ?></a></li>
+											<li><a href="#"><span class="lnr lnr-bubble"></span><?php echo esc_html(get_comments_number($post->ID));?></a></li>
+									</ul>
+								</div>
+
+								<?php endforeach; ?>
+
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="news-tracker-wrap">
+
+							<?php
+								$args = array( 'numberposts' => 1, 'order'=> 'DESC', 'orderby' => 'date');
+								$postslist = get_posts( $args );
+								foreach ($postslist as $post) :  setup_postdata($post); ?>
+
+								<h6><span>Breaking News:</span>   <a href="<?php the_permalink();?>"><?php the_title();?></a></h6>
+							
+							<?php endforeach; ?>
 							</div>
 						</div>
 					</div>
@@ -33,7 +119,7 @@
 							<div class="latest-post-wrap">
 								<h4 class="cat-title">Latest News</h4>
 								<?php
-									$args = array( 'numberposts' => 10, 'order'=> 'ASC', 'orderby' => 'ID' );
+									$args = array( 'numberposts' => 10, 'order'=> 'DESC', 'orderby' => 'date' );
 									$postslist = get_posts( $args );
 									foreach ($postslist as $post) :  setup_postdata($post); ?> 
 
@@ -69,9 +155,11 @@
 					<!-- End latest-post Area -->
 
 							<!-- Start banner-ads Area -->
-							<!-- <div class="col-lg-12 ad-widget-wrap mt-30 mb-30">
-								<img class="img-fluid" src="img/banner-ad.jpg" alt="">
-							</div> -->
+							<div class="col-lg-12 ad-widget-wrap mt-30 mb-30">
+								<img class="img-fluid" src="<?php echo wp_get_attachment_url( get_theme_mod( 'advertisement_middlepage_banner_settings' ) );?>" alt="middle page ad">
+							</div>
+							<!-- End banner-ads Area -->
+
 							<!-- End banner-ads Area -->
 
 							<!-- Start popular-post Area -->
@@ -121,7 +209,7 @@
 								<div class="relavent-story-list-wrap">
 
 								<?php
-									$args = array( 'numberposts' => 10, 'order'=> 'ASC', 'orderby' => 'ID' );
+									$args = array( 'numberposts' => 10, 'order'=> 'DESC', 'orderby' => 'rand' );
 									$postslist = get_posts( $args );
 									foreach ($postslist as $post) :  setup_postdata($post); ?> 
 

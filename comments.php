@@ -83,10 +83,10 @@ if( post_password_required() ){
 		$fields = array(
 			
 			'author' =>
-				'<div class="form-group name"><label for="author">' . __( 'Name', 'victorry' ) . '</label> <span class="required">*</span> <input id="author" name="author" type="text" class="form-control" value="' . esc_attr( $commenter['comment_author'] ) . '" required /></div>',
+				'<div class="form-group name"><input id="author" name="author" type="text" placeholder="Name *"class="form-control" value="' . esc_attr( $commenter['comment_author'] ) . '" required /></div>',
 				
 			'email' =>
-				'<div class="form-group  email"><label for="email">' . __( 'Email', 'victorry' ) . '</label> <span class="required">*</span><input id="email" name="email" class="form-control" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" required/></div>',
+				'<div class="form-group  email"><input id="email" name="email" class="form-control" type="email"  placeholder="Email *" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" required/></div>',
 				
 
 				
@@ -97,7 +97,7 @@ if( post_password_required() ){
 			'class_submit' => 'primary-btn text-uppercase',
 			'label_submit' => __( 'Post Comment', 'victorry' ),
 			'comment_field' =>
-				'<div class="form-group"><label for="comment">' . _x( 'Comment', 'victorry' ) . '</label> <span class="required">*</span><textarea id="comment" class="form-control mb-10" name="comment" rows="5" required></textarea></p>',
+				'<div class="form-group"><textarea id="comment" class="form-control mb-10" placeholder="Comment *" name="comment" rows="5" required></textarea></p>',
 			'fields' => apply_filters( 'comment_form_default_fields', $fields )
 			
 		);
