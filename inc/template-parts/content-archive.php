@@ -13,9 +13,9 @@
 											<?php the_title( '<h4>', '</h4>');?>
 										</a>
 										<ul class="meta">
-											<li><a href="#"><span class="lnr lnr-user"></span><?php the_author();?></a></li>
-											<li><a href="#"><span class="lnr lnr-calendar-full"></span><?php echo esc_html(human_time_diff( get_the_time('U'), current_time('timestamp') )) . ' ago'; ?></a></li>
-											<li><a href="#"><span class="lnr lnr-bubble"></span><?php echo esc_html(get_comments_number($post->ID));?></a></li>
+											<li><span class="lnr lnr-user"></span><?php the_author_posts_link(); ?></li>
+											<li><span class="lnr lnr-calendar-full"></span><?php echo esc_html(human_time_diff( get_the_time('U'), current_time('timestamp') )) . ' ago'; ?></li>
+											<li><span class="lnr lnr-bubble"></span><?php echo esc_html(get_comments_number($post->ID));?></li>
 										</ul>
 										<p class="excert">
 											<?php the_excerpt();?>
