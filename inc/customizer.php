@@ -80,6 +80,37 @@ function victorry_customize_register( $wp_customize ) {
             )
         );
 
+        $wp_customize->add_setting( 'top_banner_link',
+        array(
+            'default' => '', // Optional.
+            'transport' => 'refresh', // Optional. 'refresh' or 'postMessage'. Default: 'refresh'
+            'type' => 'theme_mod', // Optional. 'theme_mod' or 'option'. Default: 'theme_mod'
+            'capability' => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
+            'theme_supports' => '', // Optional. Rarely needed
+            'validate_callback' => '', // Optional. The name of the function that will be called to validate Customizer settings
+            'sanitize_callback' => 'esc_url_raw', // Optional. The name of the function that will be called to sanitize the input data before saving it to the database
+            'sanitize_js_callback' => '', // Optional. The name of the function that will be called to sanitize the data before outputting to javascript code. Basically to_json.
+            'dirty' => false, // Optional. Rarely needed. Whether or not the setting is initially dirty when created. Default: False
+        )
+        );
+
+        $wp_customize->add_control( 'top_banner_link',
+            array(
+                'label' => __( 'Top Banner URL', 'victorry' ),
+                'description' => esc_html__( 'Copy And Paste The URL associated with your Top Banner URL' , 'victorry'),
+                'section' => 'advertisement_top_section',
+                'priority' => 10, // Optional. Order priority to load the control. Default: 10
+                'type' => 'url', // Can be either text, email, url, number, hidden, or date
+                'capability' => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
+                'input_attrs' => array( // Optional.
+                    'style' => 'border: 1px solid rebeccapurple',
+                    'placeholder' => __( 'Enter URL ...', 'victorry' ),
+                ),
+            )
+        );
+
+
+
         /**
             * Add our Settings For The Middle Page Customizer Advertisement Banner 
          */
@@ -97,6 +128,38 @@ function victorry_customize_register( $wp_customize ) {
             'dirty' => false, // Optional. Rarely needed. Whether or not the setting is initially dirty when created. Default: False
         )
         );
+
+
+        $wp_customize->add_setting( 'middle_banner_link',
+        array(
+            'default' => '', // Optional.
+            'transport' => 'refresh', // Optional. 'refresh' or 'postMessage'. Default: 'refresh'
+            'type' => 'theme_mod', // Optional. 'theme_mod' or 'option'. Default: 'theme_mod'
+            'capability' => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
+            'theme_supports' => '', // Optional. Rarely needed
+            'validate_callback' => '', // Optional. The name of the function that will be called to validate Customizer settings
+            'sanitize_callback' => 'esc_url_raw', // Optional. The name of the function that will be called to sanitize the input data before saving it to the database
+            'sanitize_js_callback' => '', // Optional. The name of the function that will be called to sanitize the data before outputting to javascript code. Basically to_json.
+            'dirty' => false, // Optional. Rarely needed. Whether or not the setting is initially dirty when created. Default: False
+        )
+        );
+
+        $wp_customize->add_control( 'middle_banner_link',
+            array(
+                'label' => __( 'Middle Banner URL', 'victorry' ),
+                'description' => esc_html__( 'Copy And Paste The URL associated with your Middle Banner URL' , 'victorry'),
+                'section' => 'advertisement_middlepage_section',
+                'priority' => 10, // Optional. Order priority to load the control. Default: 10
+                'type' => 'url', // Can be either text, email, url, number, hidden, or date
+                'capability' => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
+                'input_attrs' => array( // Optional.
+                    'style' => 'border: 1px solid rebeccapurple',
+                    'placeholder' => __( 'Enter URL ...', 'victorry' ),
+                ),
+            )
+        );
+
+
 
 
         $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'advertisement_top_banner_settings',

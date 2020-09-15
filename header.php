@@ -85,7 +85,12 @@
 	              ?>
 						</div>
 						<div class="col-lg-8 col-md-8 col-sm-12 logo-right no-padding ads-banner">
-							<img class="img-fluid" src="<?php echo wp_get_attachment_url( get_theme_mod( 'advertisement_top_banner_settings' ) );?>" alt="Banner Ad">
+				  			<a href="<?php echo esc_attr( get_theme_mod('top_banner_link') );?>">
+
+							  <img class="img-fluid" src="<?php echo wp_get_attachment_url( get_theme_mod( 'advertisement_top_banner_settings' ) );?>" alt="">
+
+							</a>
+							
 						</div>
 					</div>
 				</div>
